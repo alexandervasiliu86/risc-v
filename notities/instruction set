@@ -1,0 +1,9 @@
+risc-v instructie set 
+
+om registers te manipuleren gebruiken we instructies
+
+integer arithmetic
+dat zijn dus add, addi, sub, lui,  auipc
+add is om 2 integers op te tellen
+add t1, t2, t3
+
