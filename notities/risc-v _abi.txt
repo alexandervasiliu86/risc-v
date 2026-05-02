@@ -68,3 +68,8 @@ x24 - s8
 x25 - s9
 x26 - s10
 x27 - s11
+
+daarna hebben we ook nog "extension" registers
+zoals floating-point, vector registers om SIMD/parallel prescessen uit te voeren
+vector registers
+v0 - v31
