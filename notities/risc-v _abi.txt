@@ -1,0 +1,70 @@
+risc-v abi
+
+syscalls
+om syscalls te gebruiken, gebruiken we register a7 wat een argument register is (a0-a7)
+a0 is voor file descriptors
+a1 is buffer pointer
+a2 is lengte
+a7 is syscall id
+we kunnen a3, a4,a5 en a6 gebruiken voor extra argumenten indien syscall het nodig heeft
+
+dan hebben we ook tijdelijke (temporary registers)(t0-t6)
+
+word dus door de caller gebruikt (wordt niet bewaard na function calls)
+dus we gebruiken dit als het niet van belang is dat die waarde blijft ook na function calls
+daarna hebben we ook saved registers (s0-s11)
+deze registers blijven hetzelfde ook na function calls en het kan ook gebruikt worden in function calls
+
+
+dan hebben we zero register(x0)
+zero register blijft altijd 0 en kan dus niet aangepast worden dus read-only, 
+
+
+RISC-V standaard ABI aliassen:
+x# - ABI naam
+speciale register
+x0 - zero
+
+Return address
+x1 - ra
+
+stack pointer
+x2 - sp
+
+Thread pointer
+x3 - tp
+
+Temporary registers (caller saved)
+x5 - t0
+x6 - t1
+x7 - t2
+x28 - t3
+x29 - t4
+x30 - t5
+x31 - t6
+
+saved/frame registers
+x8 - s0/fp
+x9 - s1
+
+Function arguments/returns values registers
+x10 - a0
+x11 - a1
+x12 - a2
+x13 - a3
+x14 - a4
+x15 - a5
+x16 - a6
+x17 - a7
+
+temporary registers (callee saved)
+x18 - s2
+x19 - s3
+x20 - s4
+x21 - s5
+x22 - s6
+x23 - s7
+x24 - s8
+x25 - s9
+x26 - s10
+x27 - s11
